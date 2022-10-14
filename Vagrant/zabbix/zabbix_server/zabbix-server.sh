@@ -1,4 +1,7 @@
-useradd $1 -s /bin/bash
+useradd $1 -s /bin/bash -d /home/test
+mkdir /home/test
+chown -R test:test /home/test
+
 usermod --password $(openssl passwd -6 $2) root
 usermod --password $(openssl passwd -6 $2) $1
 
